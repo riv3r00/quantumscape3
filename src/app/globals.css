@@ -19,8 +19,96 @@
   }
 }
 
+/* Apple-inspired + retro global styles */
+html, body {
+  font-family: 'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffa569, #ffffff);
+  color: #111;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+a {
+  color: #0071e3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #005bb5;
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+
+
+/* Retro pixel border for main */
+
+
+/* Stock ticker banner */
+.ticker-banner {
+  width: 100vw;
+  overflow: hidden;
+  background: #222;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #0071e3;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100vw;
+  animation: ticker-scroll 30s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.logo-spin {
+  transition: transform 0.3s ease;
+}
+
+.logo-spin:hover {
+  animation: spin 2s linear infinite;
+}
+
+/* Add a retro touch to links */
+a {
+  border-bottom: 1.5px dotted #0071e3;
 }
